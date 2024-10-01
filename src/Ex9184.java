@@ -19,7 +19,7 @@ public class Ex9184 {
 
         boolean endChk = false;
         while(!endChk){
-            String row = br.readLine(); 
+            String row = br.readLine();
             StringTokenizer st = new StringTokenizer(row);
 
             a = Integer.parseInt(st.nextToken());
