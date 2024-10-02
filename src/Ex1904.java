@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class Ex1904 {
 
 
-
+    static int[] arr;
     public static void main(String[] args) throws Exception{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,22 +16,27 @@ public class Ex1904 {
 
         int num = Integer.parseInt(st.nextToken());
 
-        //1, 00
+        arr = new int[num + 1];
 
+        int result = fnc(num);
 
-
-
+        bw.write(result + "");
         bw.flush();
         bw.close();
 
 
     }
 
-    public static int ksb(int num){
+    public static int fnc(int num){
 
-        
+        if(num == 1) return 1;
+        if(num == 2) return 2;
 
+        if(arr[num] > 0) return arr[num];
 
+        arr[num] = (fnc(num - 1) + fnc(num - 2)) % 15746;
+
+        return arr[num];
     }
 
 }
